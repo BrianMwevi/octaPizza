@@ -41,10 +41,7 @@
 									><span class="pl-3 steps-text">Choose Size</span></label
 								>
 								<div class="mx-5">
-									<select
-										class="form-control col-lg-10"
-										id="pizza-size"
-									>
+									<select class="form-control col-lg-10" id="pizza-size">
 										<option value="small">Small</option>
 										<option value="medium">Medium</option>
 										<option value="large">Large</option>
@@ -81,6 +78,7 @@
 											id="pepperoni"
 											class="form-check-input"
 											value="pepperoni"
+											checked
 										/>
 										<label class="form-label-check" for="pepperoni"
 											>Pepperoni</label
@@ -134,6 +132,7 @@
 									class="form-check-input"
 									name="dispatch"
 									id="pickup"
+									value="pickup"
 								/>
 								<label class="form-check-label" for="pickup">Pickup</label>
 							</div>
@@ -143,6 +142,8 @@
 									class="form-check-input"
 									name="dispatch"
 									id="delivery"
+									value="delivery"
+									checked
 								/>
 								<label class="form-check-label" for="delivery">Delivery</label>
 							</div>
@@ -160,40 +161,49 @@
 						<table class="table table-border">
 							<tbody>
 								<tr>
-									<td>Cart items: <span class="Size">4</span></td>
+									<td>Cart items: <span class="cart-items">0</span></td>
 								</tr>
 								<tr>
 									<td>
-										Sizes: <small class="Size">Small, large, medium</small>
+										Sizes:
+										<small class="pizza-size text-capitalize">None</small>
 									</td>
 								</tr>
 								<tr>
 									<td>
 										Crust:
-										<small class="crust">Crispy, Gluten free, stuffed</small>
-									</td>
-								</tr>
-								<tr>
-									<td>Toppings price: <small class="Size">ksh 400</small></td>
-								</tr>
-								<tr>
-									<td>
-										Dispatch process: <small class="dispatch">Delivery</small>
+										<small class="pizza-crust text-capitalize">None</small>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										Location: <small class="dispatch">Ololua, Karen</small>
+										Toppings price:
+										<small class="text-capitalize"
+											>Ksh<span class="pizza-toppings"></span> 0</small
+										>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										Delivery charges: <small class="dispatch">Ksh 300</small>
+										Dispatch process:
+										<small class="dispatch text-capitalize">None</small>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										Total Charges: <strong class="charges">Ksh 3,200</strong>
+										Location:
+										<small class="dispatch text-capitalize">None</small>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Delivery charges:
+										<small>Ksh<span class="dispatch-cost">0</span></small>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Total Charges: <strong>Ksh <span class="pizza-cost">0</span></strong>
 									</td>
 								</tr>
 								<tr>
