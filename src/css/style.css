@@ -2,7 +2,7 @@ body {
 	background-color: #f26971;
 }
 
-.pizza-order {
+.pizza-order,.pizza-orderlist {
 	height: 100vh;
 	position: relative;
 }
