@@ -1,7 +1,6 @@
 $(document).ready(function () {
 	$(".pizza-form").submit(validateForm);
 	$(".checkout").click(showOrderList);
-	$(".pizza-orderList").hide();
 });
 
 let countOrders = 0;
@@ -27,9 +26,9 @@ const price = {
 // Display Form Errors
 const formError = (error) => {
 	$(".error").text(error);
-	$(".error-modal").fadeIn("medium");
+	$(".error-modal").slideDown("fast");
 	$(".close-error,.error-overlay").click(function () {
-		$(".error-modal").fadeOut("medium");
+		$(".error-modal").hide("fast");
 	});
 };
 
@@ -42,6 +41,8 @@ const validateForm = (submit) => {
 	const pizzaSize = $("#pizza-size").val();
 	const pizzaCrust = $("#pizza-crust").val();
 	toppings = toppings.map((index, input) => input.value);
+	$(".checkout").slideDown("slow");
+	$(".pizza-form").trigger("reset")
 	return orderSummary(new Order(pizzaSize, pizzaCrust, toppings, dispatch));
 };
 
@@ -91,7 +92,6 @@ Order.prototype.getCost = calcCost;
 
 const showOrderList = () => {
 	$(".cart-items tbody").remove();
-	$(".pizza-order").fadeOut("slow");
-	$(".pizza-orderList").fadeIn("slow");
+	$(".pizza-orderlist, .pizza-order").slideToggle("slow");
 	orderList.forEach((order) => $(".cart-items").append(order));
 };
