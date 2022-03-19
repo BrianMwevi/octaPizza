@@ -16,7 +16,7 @@
 			<div class="container form-container">
 				<div class="row">
 					<div class="col-lg-3 left-col">
-						<h2 class="pt-3 text-right">Octa Pizza</h2>
+						<h2 class="pt-5 pb-2 text-right">Octa Pizza</h2>
 						<div class="left-col-img d-none d-lg-block">
 							<img
 								src="./src/images/pizza2.jpg"
@@ -25,10 +25,10 @@
 							/>
 						</div>
 					</div>
-					<div class="col-lg-6 right-col pr-0">
-						<h3>Make an Order</h3>
+					<div class="col-lg-6 right-col py-5 pl-5">
+						<h3 class="text-center pb-2">Make an Order</h3>
 						<form class="pizza-form">
-							<div class="form-group">
+							<div class="form-group mb-4">
 								<label for="pizza-size"
 									><span class="steps-number">1</span
 									><span class="pl-3 steps-text">Choose Size</span></label
@@ -45,7 +45,7 @@
 									</select>
 								</div>
 							</div>
-							<div class="form-group">
+							<div class="form-group mb-4">
 								<label for="pizza-crust"
 									><span class="steps-number">2</span
 									><span class="pl-3 steps-text">Choose Crust</span></label
@@ -66,7 +66,7 @@
 								<span class="steps-number">3</span
 								><span class="pl-3 steps-text">Toppings</span>
 							</p>
-							<div class="row">
+							<div class="row mb-3">
 								<div class="col-2 ml-5">
 									<div class="form-check">
 										<input
@@ -143,19 +143,16 @@
 
 							<div class="d-flex mt-3">
 								<p class="my-auto"><span class="steps-number">5</span></p>
-								<div class="col">
-									<button class="btn btn-info mx-3" type="submit">
-										Add to Cart
-									</button>
-									<button class="btn btn-info" type="button">Go to Cart</button>
-								</div>
+								<button class="btn btn-info mx-3" type="submit">
+									Add to Cart
+								</button>
 							</div>
 						</form>
 					</div>
-					<div class="col-lg-3 pt-5 mx-0 px-0">
-						<h5>Order Summary</h5>
+					<div class="order-summary pl-4 d-none col-lg-3 d-lg-block mx-0 px-0">
+						<h5 class="pt-5 pb-2">Order Summary</h5>
 						<table class="table table-border">
-							<thead>
+							<tbody>
 								<tr>
 									<td>Cart items: <span class="Size">4</span></td>
 								</tr>
@@ -179,9 +176,26 @@
 									</td>
 								</tr>
 								<tr>
-									<td>Total Charges: <strong class="charges">Ksh 3,200</strong></td>
+									<td>
+										Location: <small class="dispatch">Ololua, Karen</small>
+									</td>
 								</tr>
-							</thead>
+								<tr>
+									<td>
+										Delivery charges: <small class="dispatch">Ksh 300</small>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Total Charges: <strong class="charges">Ksh 3,200</strong>
+									</td>
+								</tr>
+								<tr>
+									<td class="text-center">
+										<button class="btn btn-info btn-block">View Cart Items</button>
+									</td>
+								</tr>
+							</tbody>
 						</table>
 					</div>
 				</div>
