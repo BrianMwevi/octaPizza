@@ -12,7 +12,121 @@
 		<title>Hello, world!</title>
 	</head>
 	<body>
-		<h1>Hello, world!</h1>
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<h2>Octa Pizza</h2>
+						<img class="img-fluid" src="./src/images/pizza-dark-bg.jpg" alt="Pizza Image" />
+					</div>
+					<div class="col-lg-9">
+						<h3>Octa Pizza: Fast and Reliable Delivery</h3>
+						<form>
+							<div class="form-group">
+								<label for="pizza-size"
+									><span class="order-number">1</span>Choose Size</label
+								>
+								<select name="size" id="pizza-size">
+									<option value="small">Small</option>
+									<option value="medium">Medium</option>
+									<option value="large">Large</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="pizza-crust"
+									><span class="steps">2</span>Choose Crust</label
+								>
+								<select name="crust" id="pizza-crust">
+									<option value="gf">Gluten Free</option>
+									<option value="stuffed">Stuffed</option>
+									<option value="crispy">Crispy</option>
+								</select>
+							</div>
+							<div class="row">
+								<div class="col-lg-1">
+									<p>Toppings</p>
+								</div>
+								<div class="col-lg-2">
+									<div class="form-check">
+										<input
+											type="checkbox"
+											name="pepperoni"
+											id="pepperoni"
+											class="form-check-input"
+											value="pepperoni"
+										/>
+										<label class="form-label-check" for="pepperoni"
+											>Pepperoni</label
+										>
+									</div>
+									<div class="form-check">
+										<input
+											type="checkbox"
+											name="pepperoni"
+											id="pepperoni"
+											class="form-check-input"
+											value="pepperoni"
+										/>
+										<label class="form-label-check" for="pepperoni"
+											>Pepperoni</label
+										>
+									</div>
+								</div>
+								<div class="col-lg-2">
+									<div class="form-check">
+										<input
+											type="checkbox"
+											name="pepperoni"
+											id="pepperoni"
+											class="form-check-input"
+											value="pepperoni"
+										/>
+										<label class="form-label-check" for="pepperoni"
+											>Pepperoni</label
+										>
+									</div>
+									<div class="form-check">
+										<input
+											type="checkbox"
+											name="pepperoni"
+											id="pepperoni"
+											class="form-check-input"
+											value="pepperoni"
+										/>
+										<label class="form-label-check" for="pepperoni"
+											>Pepperoni</label
+										>
+									</div>
+								</div>
+							</div>
+							<div class="form-check-inline">
+								<input
+									type="radio"
+									class="form-check-input"
+									name="delivery"
+									id="pickup"
+								/>
+								<label class="form-check-label" for="pickup">Pickup</label>
+							</div>
+							<div class="form-check-inline">
+								<input
+									type="radio"
+									class="form-check-input"
+									name="delivery"
+									id="delivery"
+								/>
+								<label class="form-check-label" for="delivery">Delivery</label>
+							</div>
+
+							<div class="d-flex">
+								<button type="submit">Add to Order List</button>
+								<button type="button">Proceed to Orderlist</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="./src/js/jquery-3.6.0.js"></script>
