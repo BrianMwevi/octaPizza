@@ -1,0 +1,45 @@
+body {
+	background-color: #f26971;
+}
+
+.pizza-order {
+	height: 100vh;
+	position: relative;
+}
+.form-container {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	border-radius: 10px 4px 4px 4px;
+}
+
+.left-col {
+	background: linear-gradient(
+		180deg,
+		rgba(242, 105, 113, 0.84) 6.25%,
+		rgba(242, 105, 113, 0) 100%
+	);
+	border-radius: 10px 4px 4px 4px;
+}
+
+.left-col-img img {
+	margin-left: 40px;
+	border-radius: 3px;
+	padding-bottom: 40px;
+}
+
+.right-col {
+	padding: 50px 0 40px 80px;
+}
+
+.steps {
+  position: relative;
+	background-color: #f26969;
+	text-align: center;
+	padding: 5px 9px;
+  color: #fff;
+	border-radius:50%;
+  font-weight: bold;
+}
