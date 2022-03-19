@@ -13,6 +13,7 @@ body {
 	transform: translate(-50%, -50%);
 	background-color: #fff;
 	border-radius: 10px 4px 4px 4px;
+	box-shadow: 0 0 10px rgba(41, 40, 40, 0.301);
 }
 
 .left-col {
@@ -34,12 +35,28 @@ body {
 	padding: 50px 0 40px 80px;
 }
 
-.steps {
-  position: relative;
+.steps-number {
+	position: relative;
 	background-color: #f26969;
 	text-align: center;
 	padding: 5px 9px;
-  color: #fff;
-	border-radius:50%;
-  font-weight: bold;
+	color: #fff;
+	border-radius: 50%;
+	font-weight: bold;
+}
+.steps-text {
+	font-size: 18px;
+}
+label,
+input {
+	cursor: pointer;
+}
+
+select.form-control {
+	background-color: #f26969;
+	color: #fff;
+}
+
+input[type='checkbox'] {
+	background-color: #f26969;
 }
