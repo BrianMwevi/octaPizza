@@ -66,3 +66,45 @@ input[type="checkbox"] {
 	);
 }
 
+/* Error Modal Start */
+.error-overlay {
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.397);
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+}
+
+.error-container {
+	background-color: #f26972ce;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.692);
+	border-radius: 4px;
+	height: 60px;
+	line-height: 60px;
+	left: 50%;
+	position: absolute;
+	text-align: center;
+	transform: translate(-50%, 0);
+	width: 25em;
+	z-index: 2;
+}
+.close-error {
+	background-color: #fff;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	position: inherit;
+	right: 0;
+	margin: 3px 3px 0 0;
+}
+
+.close-error:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.568);
+  color: #f26969;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Error Modal End */
