@@ -67,6 +67,9 @@ input[type="checkbox"] {
 }
 
 /* Error Modal Start */
+.error-modal {
+  display: none;
+}
 .error-overlay {
 	position: fixed;
 	background-color: rgba(0, 0, 0, 0.397);
