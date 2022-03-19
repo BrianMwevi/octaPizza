@@ -1,6 +1,7 @@
 $(document).ready(function () {
 	$(".pizza-form").submit(validateForm);
-	$(".checkout").click(showOrderList)
+	$(".checkout").click(showOrderList);
+	$(".pizza-orderList").hide();
 });
 
 let countOrders = 0;
@@ -89,7 +90,8 @@ const Order = function (size, crust, toppings, dispatch) {
 Order.prototype.getCost = calcCost;
 
 const showOrderList = () => {
-	
-	$(".cart-items tbody").remove()
+	$(".cart-items tbody").remove();
+	$(".pizza-order").fadeOut("slow");
+	$(".pizza-orderList").fadeIn("slow");
 	orderList.forEach((order) => $(".cart-items").append(order));
 };
