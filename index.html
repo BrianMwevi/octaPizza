@@ -12,41 +12,61 @@
 		<title>Hello, world!</title>
 	</head>
 	<body>
-		<section>
-			<div class="container">
+		<section class="pizza-order">
+			<div class="container form-container">
 				<div class="row">
-					<div class="col">
-						<h2>Octa Pizza</h2>
-						<img class="img-fluid" src="./src/images/pizza-dark-bg.jpg" alt="Pizza Image" />
+					<div class="col-lg-3 left-col">
+						<h2 class="pt-3 text-right">Octa Pizza</h2>
+						<div class="left-col-img d-none d-lg-block">
+							<img
+								src="./src/images/pizza2.jpg"
+								width="100%"
+								alt="Pizza Image"
+							/>
+						</div>
 					</div>
-					<div class="col-lg-9">
+					<div class="col-lg-9 right-col">
 						<h3>Octa Pizza: Fast and Reliable Delivery</h3>
 						<form>
 							<div class="form-group">
 								<label for="pizza-size"
-									><span class="order-number">1</span>Choose Size</label
+									><span class="steps">1</span
+									><span class="pl-3">Choose Size</span></label
 								>
-								<select name="size" id="pizza-size">
-									<option value="small">Small</option>
-									<option value="medium">Medium</option>
-									<option value="large">Large</option>
-								</select>
+								<div class="ml-5">
+									<select
+										class="form-control col-lg-4"
+										name="size"
+										id="pizza-size"
+									>
+										<option value="small">Small</option>
+										<option value="medium">Medium</option>
+										<option value="large">Large</option>
+									</select>
+								</div>
 							</div>
 							<div class="form-group">
 								<label for="pizza-crust"
-									><span class="steps">2</span>Choose Crust</label
+									><span class="steps">2</span
+									><span class="pl-3">Choose Crust</span></label
 								>
-								<select name="crust" id="pizza-crust">
-									<option value="gf">Gluten Free</option>
-									<option value="stuffed">Stuffed</option>
-									<option value="crispy">Crispy</option>
-								</select>
-							</div>
-							<div class="row">
-								<div class="col-lg-1">
-									<p>Toppings</p>
+								<div class="ml-5">
+									<select
+										class="form-control col-lg-4"
+										name="crust"
+										id="pizza-crust"
+									>
+										<option value="gf">Gluten Free</option>
+										<option value="stuffed">Stuffed</option>
+										<option value="crispy">Crispy</option>
+									</select>
 								</div>
-								<div class="col-lg-2">
+							</div>
+							<p>
+								<span class="steps">3</span><span class="pl-3">Toppings</span>
+							</p>
+							<div class="row">
+								<div class="col-lg-2 ml-5">
 									<div class="form-check">
 										<input
 											type="checkbox"
@@ -72,7 +92,7 @@
 										>
 									</div>
 								</div>
-								<div class="col-lg-2">
+								<div class="col-lg-2 pl-4">
 									<div class="form-check">
 										<input
 											type="checkbox"
@@ -81,9 +101,7 @@
 											class="form-check-input"
 											value="onions"
 										/>
-										<label class="form-label-check" for="onions"
-											>Onions</label
-										>
+										<label class="form-label-check" for="onions">Onions</label>
 									</div>
 									<div class="form-check">
 										<input
@@ -99,7 +117,11 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-check-inline">
+							<p>
+								<span class="steps">4</span
+								><span class="pl-3">Delivery Method</span>
+							</p>
+							<div class="form-check-inline ml-5">
 								<input
 									type="radio"
 									class="form-check-input"
@@ -118,9 +140,14 @@
 								<label class="form-check-label" for="delivery">Delivery</label>
 							</div>
 
-							<div class="d-flex">
-								<button type="submit">Add to Order List</button>
-								<button type="button">Proceed to Orderlist</button>
+							<div class="d-flex mt-3">
+								<p class="my-auto"><span class="steps">5</span></p>
+								<button class="btn btn-info mx-3" type="submit">
+									Add to Order List
+								</button>
+								<button class="btn btn-info pl-4" type="button">
+									Proceed to Orderlist
+								</button>
 							</div>
 						</form>
 					</div>
