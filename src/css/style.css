@@ -7,6 +7,11 @@ body {
 	height: 100vh;
 	position: relative;
 }
+
+.pizza-orderlist,
+.checkout {
+	display: none;
+}
 .form-container {
 	position: absolute;
 	left: 50%;
@@ -68,7 +73,7 @@ input[type="checkbox"] {
 
 /* Error Modal Start */
 .error-modal {
-  display: none;
+	display: none;
 }
 .error-overlay {
 	position: fixed;
@@ -104,10 +109,10 @@ input[type="checkbox"] {
 }
 
 .close-error:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.568);
-  color: #f26969;
-  cursor: pointer;
-  transition: all 0.2s;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.568);
+	color: #f26969;
+	cursor: pointer;
+	transition: all 0.2s;
 }
 
 /* Error Modal End */
