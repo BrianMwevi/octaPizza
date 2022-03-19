@@ -12,7 +12,7 @@
 		<title>Hello, world!</title>
 	</head>
 	<body>
-		<section class="pizza-order">
+		<section class="pizza-order d-none">
 			<div class="container form-container">
 				<div class="row">
 					<div class="col-lg-3 left-col">
@@ -155,7 +155,48 @@
 				</div>
 			</div>
 		</section>
-
+		<section class="pizza-orderlist">
+			<div class="container form-container">
+				<div class="row">
+					<div class="col-lg-3 left-col">
+						<h2 class="pt-3 text-right">Octa Pizza</h2>
+						<div class="left-col-img d-none d-lg-block">
+							<img
+								src="./src/images/pizza2.jpg"
+								width="100%"
+								alt="Pizza Image"
+							/>
+						</div>
+					</div>
+					<div class="col-lg-9 pl-4 pr-0">
+						<h2 class="text-center pt-3">Order Summary</h2>
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr class="text-primary">
+									<th scope="col">Order #</th>
+									<th scope="col">Size</th>
+									<th scope="col">Crust</th>
+									<th scope="col">Toppings</th>
+									<th scope="col">Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Small</td>
+									<td>Gluten Free</td>
+									<td>Pepperoni, tomatoes, onions, chicken, pineapples</td>
+									<td>Ksh 1,000</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="text-center">
+							<button class="btn btn-danger">Checkout</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="./src/js/jquery-3.6.0.js"></script>
 		<script src="./src/js/popper-2.11.2.js"></script>
