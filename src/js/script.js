@@ -2,27 +2,13 @@ $(document).ready(function () {
 	$(".pizza-form").submit(validateForm);
 });
 let countOrders = 0;
-
 // Prices
 const price = {
-	size: {
-		small: 300,
-		medium: 500,
-		large: 800,
-	},
-	crust: {
-		stuffed: 100,
-		crispy: 150,
-		gf: 200,
-	},
+	size: { small: 300, medium: 500, large: 800 },
+	crust: { stuffed: 100, crispy: 150, gf: 200 },
 	delivery: 150,
 	pickup: 0,
-	toppings: {
-		pepperoni: 80,
-		onions: 30,
-		tomatoes: 40,
-		chicken: 100,
-	},
+	toppings: { pepperoni: 80, onions: 30, tomatoes: 40, chicken: 100 },
 	toppingsPrice: function (toppingsArray) {
 		let cost = 0;
 		for (const topping of toppingsArray) {
@@ -51,22 +37,34 @@ const validateForm = (submit) => {
 	const pizzaSize = $("#pizza-size").val();
 	const pizzaCrust = $("#pizza-crust").val();
 	toppings = toppings.map((topping) => toppings[topping].value);
-	const order = new Order(pizzaSize, pizzaCrust, toppings, dispatch);
-	Order.prototype.cost = caclCost;
-	console.log(order.cost());
+	return displayOrder(new Order(pizzaSize, pizzaCrust, toppings, dispatch));
 };
-const caclCost = function () {
+
+const displayOrder = (order) => {
+	$(".cart-items").text(countOrders += 1);
+	$(".pizza-size").text(order.size);
+	$(".pizza-crust").text(order.crust);
+	$(".pizza-toppings").text(price.toppingsPrice[order.toppings]);
+	$(".dispatch-cost").text(price[order.dispatch]);
+	$(".dispatch").text(order.dispatch);
+	$(".pizza-cost").text(order.getCost());
+	
+}
+
+const calcCost = function () {
 	return (
 		price.size[this.size] +
 		price.crust[this.crust] +
 		price.toppingsPrice(this.toppings) +
 		price[this.dispatch]
-	);
-};
-// Construct a New Order
-const Order = function (size, crust, toppings, dispatch) {
-	this.size = size;
-	this.crust = crust;
+		);
+	};
+	// Construct a New Order
+	const Order = function (size, crust, toppings, dispatch) {
+		this.size = size;
+		this.crust = crust;
 	this.toppings = toppings;
 	this.dispatch = dispatch;
 };
+
+Order.prototype.getCost = calcCost;
