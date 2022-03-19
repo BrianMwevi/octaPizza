@@ -161,7 +161,7 @@
 						<table class="table table-border">
 							<tbody>
 								<tr>
-									<td>Cart items: <span class="cart-items">0</span></td>
+									<td>Cart items: <span class="cart-count">0</span></td>
 								</tr>
 								<tr>
 									<td>
@@ -208,7 +208,7 @@
 								</tr>
 								<tr>
 									<td class="text-center">
-										<button class="btn btn-info btn-block">
+										<button class="checkout btn btn-info btn-block">
 											View Cart Items
 										</button>
 									</td>
@@ -219,7 +219,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="pizza-orderlist d-none">
+		<section class="pizza-orderlist">
 			<div class="container form-container">
 				<div class="row">
 					<div class="col-lg-3 left-col">
@@ -234,7 +234,7 @@
 					</div>
 					<div class="col-lg-9 pl-4 pr-0">
 						<h3 class="text-center pt-3">Order Summary</h3>
-						<table class="table table-bordered table-striped">
+						<table class="table table-bordered table-striped cart-items">
 							<thead>
 								<tr class="text-primary">
 									<th scope="col">Order #</th>
@@ -244,15 +244,7 @@
 									<th scope="col">Total</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">1</th>
-									<td>Small</td>
-									<td>Gluten Free</td>
-									<td>Pepperoni, tomatoes, onions, chicken, pineapples</td>
-									<td>Ksh 1,000</td>
-								</tr>
-							</tbody>
+							
 						</table>
 						<div class="text-center">
 							<button class="btn btn-danger">Checkout</button>
