@@ -59,8 +59,8 @@
 										name="crust"
 										id="pizza-crust"
 									>
-									<option value="stuffed">Stuffed</option>
-									<option value="crispy">Crispy</option>
+										<option value="stuffed">Stuffed</option>
+										<option value="crispy">Crispy</option>
 										<option value="gf">Gluten Free</option>
 									</select>
 								</div>
@@ -74,15 +74,13 @@
 									<div class="form-check">
 										<input
 											type="checkbox"
-											name="pepperoni"
-											id="pepperoni"
+											name="cheese"
+											id="cheese"
 											class="form-check-input"
-											value="pepperoni"
+											value="cheese"
 											checked
 										/>
-										<label class="form-label-check" for="pepperoni"
-											>Pepperoni</label
-										>
+										<label class="form-label-check" for="cheese">Cheese</label>
 									</div>
 									<div class="form-check">
 										<input
@@ -150,38 +148,18 @@
 
 							<div class="d-flex mt-3">
 								<p class="my-auto"><span class="steps-number">5</span></p>
-								<button class="btn btn-info mx-3" type="submit">
+								<button class="btn btn-danger mx-3" type="submit">
 									Add to Cart
 								</button>
 							</div>
 						</form>
 					</div>
-					<div class="order-summary pl-4 d-none col-lg-3 d-lg-block mx-0 px-0">
-						<h5 class="pt-5 pb-2">Order Summary</h5>
+					<div class="order-summary px-3 d-none col-lg-3 d-lg-block mx-0">
+						<h5 class="pt-5 pb-2 pl-3">Latest Order Summary</h5>
 						<table class="table table-border">
 							<tbody>
 								<tr>
-									<td>Cart items: <span class="cart-count">0</span></td>
-								</tr>
-								<tr>
-									<td>
-										Sizes:
-										<small class="pizza-size text-capitalize">None</small>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										Crust:
-										<small class="pizza-crust text-capitalize">None</small>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										Toppings price:
-										<small class="text-capitalize"
-											>Ksh<span class="pizza-toppings"></span> 0</small
-										>
-									</td>
+									<td>Number of Orders: <small class="cart-count">0</small></td>
 								</tr>
 								<tr>
 									<td>
@@ -191,24 +169,13 @@
 								</tr>
 								<tr>
 									<td>
-										Location:
-										<small class="dispatch text-capitalize">None</small>
+										Total Charges:
+										<strong>Ksh <span class="pizza-cost">0</span></strong>
 									</td>
 								</tr>
 								<tr>
 									<td>
-										Delivery charges:
-										<small>Ksh<span class="dispatch-cost">0</span></small>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										Total Charges: <strong>Ksh <span class="pizza-cost">0</span></strong>
-									</td>
-								</tr>
-								<tr>
-									<td class="text-center">
-										<button class="checkout btn btn-info btn-block">
+										<button class="view-cart btn btn-info btn-block">
 											View Cart Items
 										</button>
 									</td>
@@ -232,9 +199,9 @@
 							/>
 						</div>
 					</div>
-					<div class="col-lg-9 pl-4 pr-0">
+					<div class="col-lg-9 pl-4 pr-2">
 						<h3 class="text-center pt-3">Order Summary</h3>
-						<table class="table table-bordered table-striped cart-items">
+						<table class="table table-stripped table-light">
 							<thead>
 								<tr class="text-primary">
 									<th scope="col">Order #</th>
@@ -244,13 +211,54 @@
 									<th scope="col">Total</th>
 								</tr>
 							</thead>
-							
+							<tbody class="cart-items"></tbody>
 						</table>
 						<div class="text-center">
-							<button class="btn btn-danger">Checkout</button>
+							<button class="back btn btn-danger mx-3">Go Back</button>
+							<button class="checkout btn btn-danger mx-3">Checkout</button>
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
+		<section class="checkout-modal">
+			<div class="checkout-overlay"></div>
+			<div class="checkout-container">
+				<h3 class="checkout-content pt-5 pb-2">
+					Please enter delivery details
+				</h3>
+				<input
+					class="form-control col-lg-9 mx-auto mt-4"
+					type="text"
+					name="location"
+					placeholder="Kilimani, Tigoni Suites, HSE 3B"
+					id="location"
+				/>
+				<button class="place-order btn btn-info my-4">Place Order</button>
+			</div>
+			<div class="feedback-container p-5">
+				<h3 class="pt-2 pb-2">Thank you for shopping with us!</h3>
+				<h5 class="text-center">Here is Your Order Summary</h5>
+				<ol class="text-left ml-5">
+					<li class="list-item">
+						Number of orders: <span class="cart-count"></span>
+					</li>
+					<li class="list-item">
+						Dispatch Method: <span class="dispatch text-capitalize"></span>
+					</li>
+					<li class="list-item">
+						Dispatch Cost: ksh<span class="dispatch-cost"></span>
+					</li>
+					<li class="list-item">
+						Dispatch Location:
+						<span class="dispatch-location text-capitalize"></span>
+					</li>
+					<li class="list-item">
+						Total order cost: ksh<span class="grand-total"></span>
+					</li>
+				</ol>
+				<button class="back-home btn btn-danger mx-3">Back Home</button>
+				<button class="back-to-cart btn btn-info mx-3">View Orders</button>
 			</div>
 		</section>
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
