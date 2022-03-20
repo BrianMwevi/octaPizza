@@ -9,7 +9,9 @@ body {
 }
 
 .pizza-orderlist,
-.checkout {
+.view-cart,
+.error-modal,
+.checkout-modal {
 	display: none;
 }
 .form-container {
@@ -71,30 +73,44 @@ input[type="checkbox"] {
 	);
 }
 
-/* Error Modal Start */
-.error-modal {
-	display: none;
-}
-.error-overlay {
-	position: fixed;
-	background-color: rgba(0, 0, 0, 0.397);
-	z-index: 1;
-	height: 100%;
-	width: 100%;
+.order-item td {
+	font-size: 12px;
 }
 
-.error-container {
+/* Error Modal Start */
+
+.checkout-modal {
+	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+		url(../images/pizza-dark-bg.jpg);
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-position: center center;
+}
+.error-overlay,
+.checkout-overlay {
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.397);
+	height: 100%;
+	width: 100%;
+	z-index: 3;
+}
+
+.error-container,
+.checkout-container,
+.feedback-container {
 	background-color: #f26972ce;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.692);
 	border-radius: 4px;
-	height: 60px;
-	line-height: 60px;
+	height: 90px;
+	line-height: 45px;
+	top: 0;
 	left: 50%;
 	position: absolute;
 	text-align: center;
 	transform: translate(-50%, 0);
-	width: 25em;
-	z-index: 2;
+	width: 30em;
+	z-index: 5;
 }
 .close-error {
 	background-color: #fff;
@@ -108,6 +124,11 @@ input[type="checkbox"] {
 	margin: 3px 3px 0 0;
 }
 
+.error {
+	padding: 20px 20px;
+	font-size: 18px;
+}
+
 .close-error:hover {
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.568);
 	color: #f26969;
@@ -115,4 +136,23 @@ input[type="checkbox"] {
 	transition: all 0.2s;
 }
 
+.checkout-container,
+.feedback-container {
+	height: fit-content;
+	top: 10%;
+	cursor: text;
+	color: #fff;
+	line-height: 3em;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.692);
+	display: none;
+	z-index: 2;
+}
+
+.checkout-overlay {
+	z-index: 1;
+}
+
+.checkout-container input {
+	cursor: text;
+}
 /* Error Modal End */
