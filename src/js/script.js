@@ -15,11 +15,10 @@ $(document).ready(function () {
 	$(".place-order").click(placeOrder);
 	$(".checkout").click(function () {
 		for (const order of ordersArray) {
-			if (order.dispatch === "delivery" && !order.location) {
-				return $(
+			if (order.dispatch === "delivery" && !order.location)
+				return ($(
 					".checkout-modal, .checkout-container, .pizza-orderlist"
-				).slideToggle("slow");
-			}
+				).slideToggle("slow"))
 		}
 		$(".checkout-modal, .feedback-container, .pizza-orderlist").slideToggle(
 			"slow"
@@ -33,7 +32,7 @@ let ordersArray = [];
 const price = {
 	size: { small: 300, medium: 500, large: 800 },
 	crust: { stuffed: 100, crispy: 150, gf: 200 },
-	delivery: 150,
+	delivery: 125,
 	pickup: 0,
 	toppings: { cheese: 50, onions: 30, tomatoes: 40, chicken: 100 },
 	totalCost: 0,
@@ -64,15 +63,14 @@ const validateForm = (submit) => {
 	submit.preventDefault();
 	let toppingInputs = $("input[type='checkbox']:checked");
 	if (toppingInputs.length === 0) return formError("Please select topping(s)");
-	const dispatch = $("input[name='dispatch']:checked").val();
+	const dispatch = $("input[name='dispatch']:checked");
 	if (dispatch.length === 0) return formError("Please select dispatch process");
 	const pizzaSize = $("#pizza-size").val();
 	const pizzaCrust = $("#pizza-crust").val();
 	const toppings = toppingInputs.map((i, input) => input.value);
 	$(".view-cart").slideDown("slow");
 	$(".pizza-form").trigger("reset");
-
-	return orderList(new Order(pizzaSize, pizzaCrust, toppings, dispatch));
+	return orderList(new Order(pizzaSize, pizzaCrust, toppings, dispatch.val()));
 };
 
 // Display latest Order Summary
@@ -127,9 +125,6 @@ const placeOrder = () => {
 const alertPlacedOrder = () => {
 	$(".error-overlay").css("z-index", "0");
 	formError("Order placed successfully. Proceed to cart to finalize it");
-	let timer = setTimeout(() => {
-		return $(".error-overlay").css("z-index", "3");
-		clearTimeout(timer);
-	}, 3000);
+	$(".error-overlay").css("z-index", "3");
 	return $(".error-modal").slideUp("slow");
 };
