@@ -26,8 +26,7 @@ const price = {
 			eachToppingCost.push(`${topping}: ksh ${this.toppings[topping]}`);
 		}
 		const pizza = this.size[order.size] + this.crust[order.crust] + toppings;
-		const total = pizza + this[order.dispatch];
-		this.totalCost += total;
+		this.totalCost += total = pizza + this[order.dispatch];
 		this.orders.push(order);
 		return [total, pizza, [toppings, eachToppingCost], this[order.dispatch]];
 	},
@@ -56,7 +55,7 @@ const formError = (error) => {
 	});
 };
 
-// New Order Constructor
+// Construct New Order
 const Order = function (size, crust, toppings, dispatch) {
 	this.size = size;
 	this.crust = crust;
@@ -72,16 +71,16 @@ const orderList = (order) => {
 	showOrderSummary(order);
 	const orderItem = `
 	<tr class="order-item">
-	<td class="text-capitalize">${order.orderNumber}</td>
-	<td class="text-capitalize">${order.size}: ksh ${price.size[order.size]}</td>
-	<td class="text-capitalize">${order.crust}: ksh ${price.crust[order.crust]}</td>
-	<td class="text-capitalize">${order.cost.toppings[1]}</td>
-	<td class="text-capitalize">Ksh ${order.cost.pizza}</td>
+		<td class="text-capitalize">${order.orderNumber}</td>
+		<td class="text-capitalize">${order.size}: ksh ${price.size[order.size]}</td>
+		<td class="text-capitalize">${order.crust}: ksh ${price.crust[order.crust]}</td>
+		<td class="text-capitalize">${order.cost.toppings[1]}</td>
+		<td class="text-capitalize">Ksh ${order.cost.pizza}</td>
 	</tr>`;
 	return $(".cart-items").append(orderItem);
 };
 
-// Display latest Order Summary
+// Display latest Order Item Summary
 const showOrderSummary = (order) => {
 	$(".cart-count").text(price.orders.length);
 	$(".dispatch").text(order.dispatch);
@@ -100,7 +99,7 @@ const navigationBtns = (e) => {
 	$(".checkout-modal, .checkout-container, .feedback-container").hide("slow");
 };
 
-// Get order costs as array and covert to object
+// Get order cost as an array and convert to object
 const calcCost = function () {
 	let cost = {};
 	[cost.total, cost.pizza, cost.toppings, cost.dispatch] = price.order(this);
@@ -117,7 +116,7 @@ const getLocation = () => {
 	$(".checkout-container, .feedback-container").slideToggle("slow");
 };
 
-// Order Confirmation
+// Display Order Confirmation
 const alertOrderPlaced = () => {
 	$(".error-overlay").css("z-index", "0");
 	formError("Order placed successfully. Go to view cart items");
