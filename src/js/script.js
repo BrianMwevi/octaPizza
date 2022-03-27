@@ -1,32 +1,36 @@
 $(document).ready(function () {
 	Order.prototype.getCosts = calcCost;
 	$(".pizza-form").submit(validateForm);
-	$(".back-home, .back-to-cart").click(function () {
-		if (this.classList.contains("back-home")) {
-			$(".pizza-order").show("slow");
-		} else {
-			$(".pizza-orderlist").show("slow");
-		}
-		$(".checkout-modal, .checkout-container, .feedback-container").hide("slow");
-	});
+	$(".checkout").click(checkoutOrder);
+	$(".back-home, .back-to-cart").click(navigationBtns);
 	$(".view-cart,.back").click(function () {
 		$(".pizza-orderlist, .pizza-order").slideToggle("slow");
 	});
 	$(".place-order").click(placeOrder);
-	$(".checkout").click(function () {
-		for (const order of ordersArray) {
-			if (order.dispatch === "delivery" && !order.location)
-				return ($(
-					".checkout-modal, .checkout-container, .pizza-orderlist"
-				).slideToggle("slow"))
-		}
-		$(".checkout-modal, .feedback-container, .pizza-orderlist").slideToggle(
-			"slow"
-		);
-	});
 });
 
 let ordersArray = [];
+
+const checkoutOrder = () => {
+	for (const order of ordersArray) {
+		if (order.dispatch === "delivery" && !order.location)
+			return $(
+				".checkout-modal, .checkout-container, .pizza-orderlist"
+			).slideToggle("slow");
+	}
+	$(".checkout-modal, .feedback-container, .pizza-orderlist").slideToggle(
+		"slow"
+	);
+};
+
+const navigationBtns = () => {
+	if (this.classList.contains("back-home")) {
+		$(".pizza-order").show("slow");
+	} else {
+		$(".pizza-orderlist").show("slow");
+	}
+	$(".checkout-modal, .checkout-container, .feedback-container").hide("slow");
+};
 
 // Price Object
 const price = {
@@ -76,7 +80,7 @@ const validateForm = (submit) => {
 // Display latest Order Summary
 const orderList = (order) => {
 	ordersArray.push(order);
-	alertPlacedOrder();
+	alertOrderPlaced();
 	const orderItem = `
 		<tr class="order-item">
 		<td class="text-capitalize">${order.orderNumber}</td>
@@ -85,6 +89,10 @@ const orderList = (order) => {
 			<td class="text-capitalize">${order.cost.toppings[1]}</td>
 			<td class="text-capitalize">Ksh ${order.cost.pizza}</td>
 		</tr>`;
+	return showOrderSummary(order);
+};
+
+const showOrderSummary = (order) => {
 	$(".cart-count").text(ordersArray.length);
 	$(".dispatch").text(order.dispatch);
 	$(".dispatch-cost").text(order.cost.dispatch);
@@ -122,7 +130,8 @@ const placeOrder = () => {
 	$(".checkout-container, .feedback-container").slideToggle("slow");
 };
 
-const alertPlacedOrder = () => {
+// Order Confirmation
+const alertOrderPlaced = () => {
 	$(".error-overlay").css("z-index", "0");
 	formError("Order placed successfully. Proceed to cart to finalize it");
 	$(".error-overlay").css("z-index", "3");
