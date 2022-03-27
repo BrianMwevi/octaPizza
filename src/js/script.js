@@ -92,11 +92,13 @@ const showOrderSummary = (order) => {
 
 const navigationBtns = (e) => {
 	if (e.target.classList.contains("back-home")) {
-		$(".pizza-order").show("slow");
+		$(".pizza-order").slideDown("slow");
 	} else {
-		$(".pizza-orderlist").show("slow");
+		$(".pizza-orderlist").slideDown("slow");
 	}
-	$(".checkout-modal, .checkout-container, .feedback-container").hide("slow");
+	$(".checkout-modal, .checkout-container, .feedback-container").slideUp(
+		"slow"
+	);
 };
 
 // Get order cost as an array and convert to object
